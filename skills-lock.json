@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "django-dev-ninja": {
+      "source": "sergio-bershadsky/ai",
+      "sourceType": "github",
+      "computedHash": "6969a56f63e525b9ff2bc0742a63a265dd385ef417898108f077bdacc13620a3"
+    },
+    "django-expert": {
+      "source": "vintasoftware/django-ai-plugins",
+      "sourceType": "github",
+      "computedHash": "a6b8c224017570496d688a526fcbea74025a01cc90d9afb0977bfcc1f76af306"
+    }
+  }
+}

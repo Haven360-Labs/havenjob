@@ -1,0 +1,10 @@
+.venv
+__pycache__
+*.pyc
+.git
+.env
+# Keep README.md (pyproject.toml readme = "README.md" required by uv run)
+.pytest_cache
+.coverage
+htmlcov
+*.log

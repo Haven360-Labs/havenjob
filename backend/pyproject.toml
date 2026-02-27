@@ -1,0 +1,53 @@
+[project]
+name = "havenjob-backend"
+version = "0.1.0"
+description = "Django + django-ninja API for HavenJob"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.39",
+    "Django>=6.0",
+    "django-cors-headers>=4.3",
+    "django-ninja>=1.5.3",
+    "gunicorn>=23.0",
+    "openai>=1.0",
+    "psycopg[binary]>=3.3.3",
+    "python-docx>=1.0",
+    "python-dotenv>=1.2.1",
+    "pypdf>=4.0",
+    "whitenoise>=6.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage[toml]>=7.0",
+    "pytest>=8.0",
+    "pytest-django>=4.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["config", "apps"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["test_*.py", "*_test.py", "tests.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v"
+
+[tool.coverage.run]
+source = ["apps", "config"]
+command_line = "-m pytest"
+omit = ["*/migrations/*", "*/tests.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]
